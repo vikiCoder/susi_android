@@ -11,6 +11,20 @@
         app:layout_behavior="org.fossasia.susi.ai.SnackbarBehavior"
         tools:context=".activities.MainActivity">
 
+		<android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_scroll_to_end_fab"
+            app:fabSize="mini"
+            android:onClick="scrollToEnd"
+            android:id="@+id/btnScrollToEnd"
+            android:alpha="0.85"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@+id/send_message_layout"
+            android:layout_alignEnd="@+id/send_message_layout"
+            android:layout_alignRight="@+id/send_message_layout" />
+		
         <LinearLayout
             android:id="@+id/send_message_layout"
             android:layout_width="match_parent"
@@ -19,7 +33,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/rounded_layout"
-            android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="5dp"
             android:layout_alignParentBottom="true">
@@ -35,7 +48,8 @@
                 android:hint="@string/send_msg_hint"
                 android:imeOptions="actionSend"
                 android:inputType="text"
-                android:theme="@style/sendMessageEditTextTheme" />
+                android:theme="@style/sendMessageEditTextTheme"
+                android:layout_gravity="center_vertical"/>
 
 
             <android.support.design.widget.FloatingActionButton
@@ -48,7 +62,8 @@
                 android:src="@drawable/ic_mic_white_24dp"
                 app:backgroundTint="@color/colorPrimary"
                 app:elevation="0dp"
-                app:fabSize="mini" />
+                app:fabSize="mini"
+                android:layout_gravity="bottom" />
 
         </LinearLayout>
 
@@ -61,16 +76,6 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:scrollbars="vertical" />
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/rounded_layout_cyan"
-            android:gravity="center" />
 
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

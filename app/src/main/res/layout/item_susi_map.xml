@@ -10,8 +10,8 @@
     android:layout_marginTop="@dimen/message_layout_margin"
     app:cmv_arrowGravity="start"
     app:cmv_arrowPosition="left"
-    app:cmv_backgroundColor="@color/other_message_bg"
-    app:cmv_backgroundColorPressed="@color/other_message_bg_dark"
+    app:cmv_backgroundColor="@color/susi_message_bg"
+    app:cmv_backgroundColorPressed="@color/susi_message_pressed_bg"
     app:cmv_contentPadding="@dimen/cmv_padding"
     app:cmv_cornerRadius="@dimen/cmv_corner_radius"
     app:cmv_showArrow="false">
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:autoLink="web"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/md_white_1000"
+                android:textColor="@color/md_black_1000"
                 android:textSize="@dimen/message_text_size"
                 tools:text="Hello!!"/>
 
@@ -44,18 +44,38 @@
                 android:layout_height="match_parent"
                 android:gravity="bottom|end"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="@color/md_blue_grey_50"
+                android:textColor="@color/md_grey_600"
                 android:textSize="@dimen/timestamp_size"
                 tools:text="05:32" />
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/map_image"
+
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginTop="4dp"
-            android:background="#aaffffff"
-            tools:src="@drawable/ic_susi" />
+            android:layout_height="250dp">
+
+
+
+            <ImageView
+                android:id="@+id/map_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="#aaffffff"
+                tools:src="@drawable/ic_susi" />
+
+
+            <ImageView
+                android:id="@+id/location_pointer"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_location_pointer"/>
+
+
+        </FrameLayout>
+
     </LinearLayout>
 </me.himanshusoni.chatmessageview.ChatMessageView>

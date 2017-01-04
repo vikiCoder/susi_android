@@ -9,6 +9,7 @@ import org.fossasia.susi.ai.R;
 
 import java.util.regex.Pattern;
 
+
 /**
  * Created by saurabh on 11/10/16.
  */
@@ -20,6 +21,7 @@ public class CredentialHelper {
     private static Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,64}$");
 
     public static boolean isEmailValid(String email) {
+        email = email.trim();
         return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
@@ -60,4 +62,6 @@ public class CredentialHelper {
             return false;
         }
     }
+
+
 }

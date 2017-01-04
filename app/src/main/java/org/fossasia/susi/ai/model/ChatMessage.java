@@ -9,25 +9,47 @@ import io.realm.RealmObject;
  * Created by himanshusoni on 06/09/15.
  */
 public class ChatMessage extends RealmObject {
-    private boolean isImage, isMine, isMap, isPieChart, isDelivered, isHavingLink;
+    private boolean isImage, isMine, isMap, isPieChart , isWebSearch, isDelivered, isHavingLink, isSearchResult, isDate;
     private long id;
-    private String content, timeStamp;
+    private String content, timeStamp, des, date;
     private RealmList<Datum> datumRealmList;
 
     public ChatMessage() {
         datumRealmList = new RealmList<>();
     }
 
-    public ChatMessage(long id, String content, boolean isMine, boolean isImage, boolean isMap, boolean isHavingLink, boolean isPieChart, String timeStamp, RealmList<Datum> datumRealmList) {
+    public ChatMessage(long id, String content, String des , String date, boolean isDate, boolean isMine, boolean isImage, boolean isWebSearch, boolean isSearchResult, boolean isMap, boolean isHavingLink, boolean isPieChart, String timeStamp, RealmList<Datum> datumRealmList) {
         this.id = id;
+        this.isWebSearch = isWebSearch;
         this.isImage = isImage;
+        this.des = des;
         this.isMine = isMine;
         this.content = content;
+        this.date = date;
+        this.isDate = isDate;
         this.timeStamp = timeStamp;
         this.isMap = isMap;
         this.isHavingLink = isHavingLink;
         this.datumRealmList = datumRealmList;
         this.isPieChart = isPieChart;
+        this.isSearchResult = isSearchResult;
+    }
+
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des;
+    }
+
+    public boolean isWebSearch() {
+        return isWebSearch;
+    }
+
+    public void setWebSearch(boolean webSearch) {
+        isWebSearch = webSearch;
     }
 
     public boolean isMap() {
@@ -52,6 +74,22 @@ public class ChatMessage extends RealmObject {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public boolean isDate() {
+        return isDate;
+    }
+
+    public void setIsDate(boolean date) {
+        isDate = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public long getId() {
@@ -82,9 +120,11 @@ public class ChatMessage extends RealmObject {
 
     public void setHavingLink(boolean havingLink) {isHavingLink = havingLink;}
 
-    public void setDatumRealmList(RealmList<Datum> datumRealmList){ this.datumRealmList = datumRealmList; }
-
     public RealmList<Datum> getDatumRealmList() { return datumRealmList; }
+
+    public void setDatumRealmList(RealmList<Datum> datumRealmList) {
+        this.datumRealmList = datumRealmList;
+    }
 
     public void setIsPieChart(boolean isPieChart){ this.isPieChart = isPieChart; }
 
@@ -94,4 +134,11 @@ public class ChatMessage extends RealmObject {
 
     public void setIsDelivered(boolean isDelivered) { this.isDelivered = isDelivered; }
 
+    public boolean isSearchResult() {
+        return isSearchResult;
+    }
+
+    public void setSearchResult(boolean searchResult) {
+        isSearchResult = searchResult;
+    }
 }
